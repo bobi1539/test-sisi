@@ -1,0 +1,10 @@
+insert into m_cement (variant, price, stock) values ('Opela', 28595, 438083);
+insert into m_cement (variant, price, stock) values ('Bamity', 9724, 514212);
+insert into m_cement (variant, price, stock) values ('Fixflex', 48622, 647051);
+insert into m_cement (variant, price, stock) values ('Lotlux', 69754, 843987);
+insert into m_cement (variant, price, stock) values ('Viva', 25241, 58439);
+insert into m_cement (variant, price, stock) values ('Konklux', 64794, 992849);
+insert into m_cement (variant, price, stock) values ('Transcof', 43294, 556890);
+insert into m_cement (variant, price, stock) values ('Tempsoft', 37338, 278659);
+insert into m_cement (variant, price, stock) values ('Span', 17873, 901924);
+insert into m_cement (variant, price, stock) values ('Tres-Zap', 17343, 306673);

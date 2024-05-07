@@ -2,7 +2,7 @@ package tes.sis.testsisi.controller;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import tes.sis.testsisi.constant.GlobalMessage;
-import tes.sis.testsisi.dto.BaseResponse;
+import tes.sis.testsisi.dto.response.BaseResponse;
 
 @ControllerAdvice
 public abstract class BaseController {

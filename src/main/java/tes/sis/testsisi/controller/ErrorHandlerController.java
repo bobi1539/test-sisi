@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import tes.sis.testsisi.constant.Constant;
 import tes.sis.testsisi.constant.GlobalMessage;
-import tes.sis.testsisi.dto.BaseResponse;
+import tes.sis.testsisi.dto.response.BaseResponse;
 import tes.sis.testsisi.exception.AppException;
 
 @RestControllerAdvice
