@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: test-sisi
+  profiles:
+    active: development
