@@ -23,6 +23,7 @@ public class SaleReport {
     private final XSSFSheet sheet = workbook.createSheet();
     private static final String ARIAL = "Arial";
     private final String[] headerTable = new String[]{
+            "no",
             "sale_id",
             "customer_name",
             "customer_phone_number",
@@ -41,6 +42,7 @@ public class SaleReport {
     }
 
     public GenerateReportResponseDto generateReport() {
+        adjustColumn();
         writeLogStart();
         writeHeader();
         writeBody();
@@ -55,6 +57,12 @@ public class SaleReport {
             throw new AppException(GlobalMessage.INTERNAL_SERVER_ERROR);
         } finally {
             writeLogFinish();
+        }
+    }
+
+    private void adjustColumn() {
+        for (int i = 0; i < 11; i++) {
+            sheet.setColumnWidth(i, 4250);
         }
     }
 
@@ -74,14 +82,15 @@ public class SaleReport {
             XSSFRow row = sheet.createRow(rowNum.get());
             writeCellBody(row, 0, rowNum.toString());
             writeCellBody(row, 1, sale.getId().toString());
-            writeCellBody(row, 2, sale.getCustomer().getPhoneNumber());
-            writeCellBody(row, 3, sale.getCustomer().getAddress());
-            writeCellBody(row, 4, sale.getDriver().getName());
+            writeCellBody(row, 2, sale.getCustomer().getName());
+            writeCellBody(row, 3, sale.getCustomer().getPhoneNumber());
+            writeCellBody(row, 4, sale.getCustomer().getAddress());
             writeCellBody(row, 5, sale.getDestinationAddress());
-            writeCellBody(row, 6, sale.getCement().getVariant());
-            writeCellBody(row, 7, sale.getPrice().toString());
-            writeCellBody(row, 7, sale.getQuantity().toString());
-            writeCellBody(row, 7, sale.getTotalPrice().toString());
+            writeCellBody(row, 6, sale.getDriver().getName());
+            writeCellBody(row, 7, sale.getCement().getVariant());
+            writeCellBody(row, 8, sale.getPrice().toString());
+            writeCellBody(row, 9, sale.getQuantity().toString());
+            writeCellBody(row, 10, sale.getTotalPrice().toString());
 
             rowNum.getAndIncrement();
         });
